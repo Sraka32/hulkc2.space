@@ -1,0 +1,240 @@
+:root {
+  --bg: #000;
+  --accent: #ffffff;
+  --muted: #777;
+  --card: rgba(255,255,255,0.04);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--accent);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: -2px;
+  animation: colorChange 4s ease-in-out infinite;
+}
+.logo span {
+  color: gray;
+}
+@keyframes colorChange {
+  0% { color: #fff; }
+  50% { color: #888; }
+  100% { color: #fff; }
+}
+
+.search-box {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 25px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+  width: 320px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  outline: none;
+}
+
+.search-box button {
+  width: 100%;
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.search-box button:hover {
+  background: #222;
+}
+
+/* loader */
+.loader {
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.online {
+  margin-top: 25px;
+  color: #aaa;
+}
+.info {
+  margin: 8px 0 12px;
+  color: #ccc;
+  font-size: 14px;
+}
+.discord-btn img {
+  width: 40px;
+  filter: grayscale(100%);
+  transition: filter .2s;
+}
+.discord-btn:hover img {
+  filter: grayscale(0%);
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+}
+
+.sidebar.left {
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.history-box {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px 16px;
+  width: 220px;
+  box-shadow: 0 8px 25px rgba(2,6,23,.5);
+}
+.history-box h3 {
+  margin-top: 0;
+  font-size: 13px;
+  letter-spacing: .5px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.sideHistory {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.side-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+.side-item img {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+}
+.side-item span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: #0a0a0a;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 500px;
+  max-width: 90%;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+  display: none;
+  z-index: 100;
+  color: #fff;
+}
+.modal-content {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+/* DODAJ TO PONIŻEJ */
+.modal.show {
+  display: block;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.modal-content th,
+.modal-content td {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-align: left;
+}
+
+.modal-content th {
+  background: rgba(255,255,255,0.05);
+}

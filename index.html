@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hulkc2.space - wyszukiwarka</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="sidebar left">
+    <div class="history-box">
+      <h3>HISTORIA WYSZUKIWANIA</h3>
+      <div id="sideHistory" class="sideHistory"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="logo">hulkc2.space<span></span></h1>
+
+    <div class="search-box">
+      <input id="nickInput" type="text" placeholder="Wpisz nick..." autocomplete="off" />
+      <button id="searchBtn">
+        <span id="btnText">WYSZUKAJ</span>
+        <div class="loader" id="btnLoader"></div>
+      </button>
+    </div>
+
+    <p class="online">Online: <span id="onlineCount">0</span></p>
+    <p class="info">Kupno reklamy na discordzie</p>
+
+     <a href="https://discord.gg/pPGV4F2ZBP" class="discord-btn" target="_blank">
+     <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="discord" />
+   </a>
+
+
+  <footer>Made by Fabian0934</footer>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-header">
+      <strong id="modalTitle">Wyniki wyszukiwania</strong>
+      <button id="modalClose" class="closeBtn">✕</button>
+    </div>
+    <div id="modalContent" class="modal-content"></div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
